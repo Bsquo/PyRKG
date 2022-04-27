@@ -79,9 +79,9 @@ def decode_Yaz1(src, offset, uncompressedSize):
 	return dst
 
 if __name__ == "__main__":
-	file_name = "replay.dat"
+	file_name = "01m08s7732250 Cole.rkg"
 	with open(file_name, "rb") as f:
 		src = f.read()
 
-	result = decode_MK7_DAT(src)
+	result = decode_RKG(src)
 	print(result)

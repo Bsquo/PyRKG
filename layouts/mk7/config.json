@@ -1,0 +1,114 @@
+{
+    "width": 400,
+    "height": 250,
+    "bg_color": [0, 0, 255],
+    "components": [
+        {
+            "name": "StaticImage_C",
+            "info": {
+                "position": [74, 101],
+                "image": "analog_outer.png"
+            }
+        },
+        {
+            "name": "Tuple_C",
+            "input_type": "analog",
+            "info": {
+                "position": [74, 101],
+                "image": "analog.png",
+                "pos_range": [25, 25]
+            }
+        },
+        {
+            "name": "Categorical_C",
+            "input_type": "a_btn",
+            "info": {
+                "categories": {
+                    "0": {
+                        "position": [270,90],
+                        "image": "button.png"
+                    },
+                    "1": {
+                        "position": [270,90],
+                        "image": "button_filled.png"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Categorical_C",
+            "input_type": "b_btn",
+            "info": {
+                "categories": {
+                    "0": {
+                        "position": [220, 138],
+                        "image": "button.png"
+                    },
+                    "1": {
+                        "position": [220, 138],
+                        "image": "button_filled.png"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Categorical_C",
+            "input_type": "l_btn",
+            "info": {
+                "categories": {
+                    "0": {
+                        "position": [230, 40],
+                        "image": "shoulder.png"
+                    },
+                    "1": {
+                        "position": [230, 40],
+                        "image": "shoulder_filled.png"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Categorical_C",
+            "input_type": "r_btn",
+            "info": {
+                "categories": {
+                    "0": {
+                        "position": [70, 40],
+                        "image": "shoulder.png"
+                    },
+                    "1": {
+                        "position": [70, 40],
+                        "image": "shoulder_filled.png"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Categorical_C",
+            "input_type": "1st_person_enabled",
+            "info": {
+                "categories": {
+                    "0": {
+                        "position": [110, 230],
+                        "image": "1st_person_no.png"
+                    },
+                    "1": {
+                        "position": [110, 230],
+                        "image": "1st_person_yes.png"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Text_C",
+            "input_type": "analog",
+            "info": {
+                "position": [101, 207],
+                "font": "FOT-RodinNTLGPro-EB_1.otf",
+                "size": 15,
+                "stroke_width": 2,
+                "stroke_fill": [0, 0, 0]
+            }
+        }
+    ]
+}

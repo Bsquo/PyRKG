@@ -26,7 +26,7 @@ class VideoGenerator:
         while frame_f < total_frames:
             frame = floor(frame_f)
             cur_inputs = self.inputs.get_frame(frame)
-            self.controller.process_inputs_and_draw(cur_inputs, TRANSPARENT)
+            self.controller.process_inputs_and_draw(cur_inputs, TRANSPARENT, SHOW_JOYSTICK_VALUES, SHOW_FIRST_PERSON_ENABLED_TEXT, JOYSTICK_RANGE_7_7)
             #video.write(cv2.cvtColor(numpy.array(self.controller.canvas.canvas), cv2.COLOR_RGB2BGR))
             self.controller.canvas.write_to_file(p.stdin, "png")
 

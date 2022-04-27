@@ -27,18 +27,21 @@ class TestSuite:
         l = Checkbutton(self.win, variable=self.l_v, text="L")
         l.grid(column=2, row=0, sticky=W)
         self.r_v = IntVar()
-        l = Checkbutton(self.win, variable=self.r_v, text="R")
-        l.grid(column=3, row=0, sticky=W)
+        r = Checkbutton(self.win, variable=self.r_v, text="R")
+        r.grid(column=3, row=0, sticky=W)
+        self.first_person_v = IntVar()
+        first_person = Checkbutton(self.win, variable=self.first_person_v, text="1st Person Enabled")
+        first_person.grid(column=4, row=0, sticky=W)
 
         self.hor_v = IntVar(self.win)
         self.hor_v.set(7)
         hor = OptionMenu(self.win, self.hor_v, *range(0, 15))
-        hor.grid(column=4, row=0, sticky=W)
+        hor.grid(column=5, row=0, sticky=W)
 
         self.vert_v = IntVar(self.win)
         self.vert_v.set(7)
         vert = OptionMenu(self.win, self.vert_v, *range(0, 15))
-        vert.grid(column=5, row=0, sticky=W)
+        vert.grid(column=6, row=0, sticky=W)
 
         # canvas
         self.label = Label(self.win)
@@ -64,7 +67,7 @@ class TestSuite:
                     print(e)
         else:
             self.last_error = ""
-            self.controller.process_inputs_and_draw(self.get_inputs(), False)
+            self.controller.process_inputs_and_draw(self.get_inputs(), False, True, True, False)
             self.tkimage = PIL.ImageTk.PhotoImage(self.controller.canvas.canvas)
             self.label.configure(image=self.tkimage)
 
@@ -79,9 +82,9 @@ class TestSuite:
             self.win.update()
 
     def get_inputs(self):
-        return (str(self.a_v.get()), str(self.b_v.get()), str(self.r_v.get()), str(self.l_v.get()), self.hor_v.get(), self.vert_v.get())
+        return (str(self.a_v.get()), str(self.b_v.get()), str(self.r_v.get()), str(self.l_v.get()), str(self.first_person_v.get()), self.hor_v.get(), self.vert_v.get())
 
 
 if __name__ == "__main__":
-    t = TestSuite("classic")
+    t = TestSuite("mk7")
     t.start_loop()

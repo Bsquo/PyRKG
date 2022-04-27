@@ -2,7 +2,7 @@ from math import floor
 
 class Component:
 
-    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "analog"]
+    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "1st_person_enabled", "analog"]
 
     def __init__(self, canvas, input_type: str):
         self.canvas = canvas
@@ -14,13 +14,13 @@ class Component:
     def init_component(self, info: dict):
         pass
 
-    def process_input_and_draw(self, current_input):
+    def process_input_and_draw(self, current_input, show_joystick_values, show_first_person_enabled_text, joystick_range_7_7):
         pass
 
 
 class Categorical_C(Component):
 
-    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "analog"]
+    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "1st_person_enabled", "analog"]
     info_format = {
         "categories": {
             str: { # string representing category
@@ -35,9 +35,11 @@ class Categorical_C(Component):
         for category in self.categories.values():
             self.canvas.load_image(category["image"])
 
-    def process_input_and_draw(self, current_input):
+    def process_input_and_draw(self, current_input, show_joystick_values, show_first_person_enabled_text, joystick_range_7_7):
         cur_info = self.categories[current_input]
-        self.canvas.draw_image(cur_info["image"], cur_info["position"])
+        # Avoid rendering the "1st Person Enabled" image if the setting for it is toggled off.
+        if self.input_type != "1st_person_enabled" or self.input_type == "1st_person_enabled" and show_first_person_enabled_text:
+            self.canvas.draw_image(cur_info["image"], cur_info["position"])
 
 
 class Tuple_C(Component):
@@ -56,7 +58,7 @@ class Tuple_C(Component):
         
         self.canvas.load_image(self.image)
 
-    def process_input_and_draw(self, current_input):
+    def process_input_and_draw(self, current_input, show_joystick_values, show_first_person_enabled_text, joystick_range_7_7):
         delta_pos = (floor((current_input[1] - 7) * self.pos_range[0] / 7), floor((7 - current_input[0]) * self.pos_range[1] / 7))
         cur_position = (self.position[0] + delta_pos[0], self.position[1] + delta_pos[1])
         self.canvas.draw_image(self.image, cur_position)
@@ -64,7 +66,7 @@ class Tuple_C(Component):
 
 class Text_C(Component):
 
-    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "analog"]
+    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "1st_person_enabled", "analog"]
     info_format = {
         "position": list, # [x, y]
         "font": str, # font file name
@@ -86,19 +88,20 @@ class Text_C(Component):
         self.position = tuple(info["position"])
         self.canvas.load_font(self.info["font"], self.info["size"])
 
-    def process_input_and_draw(self, current_input):
-        if self.input_type == "a_btn":
-            text = f"A: {current_input}"
-        elif self.input_type == "b_btn":
-            text = f"B: {current_input}"
-        elif self.input_type == "l_btn":
-            text = f"L: {current_input}"
-        elif self.input_type == "r_btn":
-            text = f"R: {current_input}"
-        elif self.input_type == "analog":
-            text = f"{str(current_input)}"
-        
-        self.canvas.draw_text(text, **self.info)
+    # Reduced the function to only display text for the joystick (the raw horizontal and vertical values)
+    def process_input_and_draw(self, current_input, show_joystick_values, show_first_person_enabled_text, joystick_range_7_7):
+        if self.input_type == "analog":
+            # Render the joystick raw values ranging from (-7,7)
+            if joystick_range_7_7:
+                # Taken from the original PyRKG README
+                new_input = (current_input[0] - 7, current_input[1] - 7)	
+                text = f"{str(new_input )}"
+            # Render the joystick raw values ranging from (0,14)
+            else:
+                text = f"{str(current_input)}"
+
+        if show_joystick_values:
+            self.canvas.draw_text(text, **self.info)
 
 
 class StaticImage_C(Component):
@@ -113,5 +116,5 @@ class StaticImage_C(Component):
         self.position = tuple(info["position"])
         self.canvas.load_image(self.image)
 
-    def process_input_and_draw(self, current_input):
+    def process_input_and_draw(self, current_input, show_joystick_values, show_first_person_enabled_text, joystick_range_7_7):
         self.canvas.draw_image(self.image, self.position)

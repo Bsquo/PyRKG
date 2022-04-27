@@ -112,11 +112,12 @@ class Inputs:
     def read_ghost_file_MK7(self, file_name):
         with open(file_name, "rb") as f:
             src = f.read()
-        raw_data = src[0xC0:] # remove the rkg header and decompress
+        raw_data = src[0xC0:] # The input data in MK7 ghost files starts at 0xC0
 
-        # header. In MK7, the input count is actually the length of the actual data
+        # Input data header
+        # In MK7, the input count is actually the length of the actual data.
         # So in order to get the actual face button/input count, we have to divide
-        # by 2 (since an input consists of two bytes)
+        # by 2 (since an input consists of two bytes, state and length)
         nr_button_inputs = ((raw_data[1] << 0x8) | raw_data[0]) // 2
         nr_analog_inputs = ((raw_data[3] << 0x8) | raw_data[2]) // 2
 
@@ -135,7 +136,7 @@ class Inputs:
             drift = (inputs & 0x20) >> 5
             first_person = (inputs & 0x40) >> 6
 
-            button_inputs += [(accelerator, brakes, drift, item)] * frames
+            button_inputs += [(accelerator, brakes, drift, item, first_person)] * frames
             cur_byte += 2
 
         for _ in range(nr_analog_inputs):
@@ -147,7 +148,7 @@ class Inputs:
             analog_inputs += [(vertical, horizontal)] * frames
             cur_byte += 2
 
-        self.inputs = [(button_inputs[i][0], button_inputs[i][1], button_inputs[i][2], button_inputs[i][3], analog_inputs[i][0], analog_inputs[i][1]) 
+        self.inputs = [(button_inputs[i][0], button_inputs[i][1], button_inputs[i][2], button_inputs[i][3], button_inputs[i][4], analog_inputs[i][0], analog_inputs[i][1]) 
                         for i in range(len(button_inputs))]
 
     def _decode_bitfield(self, bitfield:int, return_length:int):

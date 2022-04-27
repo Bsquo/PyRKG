@@ -36,7 +36,7 @@ class Controller:
             instance.init_component(comp["info"])
             self.components.append((input_type, instance))
 
-    def process_inputs_and_draw(self, inputs, transparent):
+    def process_inputs_and_draw(self, inputs, transparent, show_joystick_values, show_first_person_enabled_text, joystick_range_7_7):
         self.canvas.clear_canvas(transparent)
         for input_type, comp in self.components:
             if input_type == "a_btn":
@@ -47,16 +47,18 @@ class Controller:
                 cur_input = str(inputs[2])
             elif input_type == "r_btn":
                 cur_input = str(inputs[3])
+            elif input_type == "1st_person_enabled":
+                cur_input = str(inputs[4])
             elif input_type == "analog":
-                cur_input = (inputs[4], inputs[5])
+                cur_input = (inputs[5], inputs[6])
             elif input_type == None:
                 cur_input = None
 
-            comp.process_input_and_draw(cur_input)
+            comp.process_input_and_draw(cur_input, show_joystick_values, show_first_person_enabled_text, joystick_range_7_7)
 
 
 if __name__ == "__main__":
     c = Controller()
-    c.read_json("classic")
+    c.read_json("mk7")
     c.process_inputs((0, 0, 0, 0, 0, 0))
     c.canvas.show()
