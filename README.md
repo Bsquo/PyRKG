@@ -1,16 +1,8 @@
 # PyRKG (Mario Kart 7 support)
-This is a mod of AtishaRibeiro's PyRKG that adds support for Mario Kart 7's DAT ghost files.
 
-Clone or download this repository, then follow the instructions below to install the dependencies. Place your desired ghost file in the same directory as **main.py** and run the script like this using the command line:
+This is a fork of AtishaRibeiro's PyRKG that adds support for Mario Kart 7's DAT ghost files.
 
-```
-main.py -l classic -g replay.dat
-```
-
-# PyRKG
-
-A customisable terminal based input display for MKW ghost files.
-Currently the image processing backend is done with Pillow but this is extremely limiting (and slow?) so this might be changed in the future.
+Clone or download this repository to any folder you want, then follow the instructions below to install the dependencies and execute the script.
 
 ## Table of Contents
 1. [Prerequisites](#Prerequisites)
@@ -21,18 +13,30 @@ Currently the image processing backend is done with Pillow but this is extremely
 ### Prerequisites
 - Have Python installed, download [here](https://www.python.org/downloads/)
 - Have the `Pillow` library installed, after installing Python run `pip install Pillow`
+- If you have errors executing the `pip` command, you may not have it installed in your computer. In that case, [install the command](https://www.liquidweb.com/kb/install-pip-windows/) and try again.
 - Download `FFMPEG` from [here](https://github.com/BtbN/FFmpeg-Builds/releases) and place the `ffmpeg.exe` in the same folder as `main.py`
 
 ### Running PyRKG
 The main command is `python main.py -l <layout> -g <ghost_file>` where:
--  `<layout>` is the name of the layout you want to use (the name of the folder in `layouts`
-- `<ghost_file>` is the path to the ghost file you want to make a video of
+-  `<layout>` is the name of the layout you want to use (the name of the folder in `layouts`). The layout for Mario Kart 7 is called `mk7`.
+- `<ghost_file>` is the path to the ghost file you want to make a video of.
 
-This will generate a video in the same folder as `main.py`. There are a few video settings you can specify, these can be found in `src/CONFIG.py`:
+For example, to generate a video of the inputs from a Mario Kart 7 ghost, you would need to execute the following command:
+```
+python main.py -l mk7 -g your_ghost.dat
+```
+
+This will generate a video in the same folder as `main.py`, called `video.mov`. There are a few video settings you can specify, these can be found in `src/CONFIG.py`:
 
 - `VIDEO_FRAME_RATE`: the video frame rate
 - `VIDEO_EXTENSION`: the video file format
 - `TRANSPARENT`: whether the video should have a transparent background
+
+For Mario Kart 7 ghosts, you also have three additional options you can toggle on/off by setting them to either **True** or **False**. These are:
+
+- `SHOW_FIRST_PERSON_ENABLED_TEXT`: Shows a piece of text stating if the ghost is driving in first person view at any given moment.
+- `SHOW_JOYSTICK_VALUES`: Shows the raw values of the stick.
+- `JOYSTICK_RANGE_7_7`: If enabled, the range of values used for the stick will be between (-7, 7), rather than (0, 14). Note that the option `SHOW_JOYSTICK_VALUES` must be enabled in order for this to work.
 
 ### Making your own Layouts
 Layouts reside in the `layouts` folder. To make a new layout simply create a folder there.
