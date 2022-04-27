@@ -2,7 +2,7 @@ from math import floor
 
 class Component:
 
-    supported_input_types = ["a_btn", "b_btn", "l_btn", "analog", "trick"]
+    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "analog"]
 
     def __init__(self, canvas, input_type: str):
         self.canvas = canvas
@@ -20,7 +20,7 @@ class Component:
 
 class Categorical_C(Component):
 
-    supported_input_types = ["a_btn", "b_btn", "l_btn", "trick"]
+    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "analog"]
     info_format = {
         "categories": {
             str: { # string representing category
@@ -64,7 +64,7 @@ class Tuple_C(Component):
 
 class Text_C(Component):
 
-    supported_input_types = ["a_btn", "b_btn", "l_btn", "analog", "trick"]
+    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "analog"]
     info_format = {
         "position": list, # [x, y]
         "font": str, # font file name
@@ -93,10 +93,10 @@ class Text_C(Component):
             text = f"B: {current_input}"
         elif self.input_type == "l_btn":
             text = f"L: {current_input}"
+        elif self.input_type == "r_btn":
+            text = f"R: {current_input}"
         elif self.input_type == "analog":
             text = f"{str(current_input)}"
-        elif self.input_type == "trick":
-            text = f"TRICK: {current_input}"
         
         self.canvas.draw_text(text, **self.info)
 

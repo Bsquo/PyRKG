@@ -1,3 +1,11 @@
+# PyRKG (Mario Kart 7 support)
+This is a mod of AtishaRibeiro's PyRKG that adds support for Mario Kart 7's DAT ghost files.
+
+Clone or download this repository, then follow the instructions below to install the dependencies. Place your desired ghost file in the same directory as **main.py** and run the script like this using the command line:
+
+```
+main.py -l classic -g replay.dat
+```
 
 # PyRKG
 

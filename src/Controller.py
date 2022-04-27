@@ -45,10 +45,10 @@ class Controller:
                 cur_input = str(inputs[1])
             elif input_type == "l_btn":
                 cur_input = str(inputs[2])
+            elif input_type == "r_btn":
+                cur_input = str(inputs[3])
             elif input_type == "analog":
-                cur_input = (inputs[3], inputs[4])
-            elif input_type == "trick":
-                cur_input = str(inputs[5])
+                cur_input = (inputs[4], inputs[5])
             elif input_type == None:
                 cur_input = None
 
@@ -57,6 +57,6 @@ class Controller:
 
 if __name__ == "__main__":
     c = Controller()
-    c.read_json("test")
+    c.read_json("classic")
     c.process_inputs((0, 0, 0, 0, 0, 0))
     c.canvas.show()

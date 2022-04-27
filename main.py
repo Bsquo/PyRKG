@@ -19,7 +19,8 @@ def main(argv):
             -g | --ghost <ghostfile>\t specify the ghost file to be read
             -t\t run the test suite to preview the layout\n
             example usage:
-            main.py -l layout1 -g ghost.rkg OR
+            main.py -l layout1 -g ghost.rkg,
+            main.py -l classic -g replay.dat (for Mario Kart 7 ghosts) OR
             main.py -l layout1 -t""")
             sys.exit(2)
 

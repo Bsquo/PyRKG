@@ -4,37 +4,9 @@
     "bg_color": [0, 255, 0],
     "components": [
         {
-            "name": "Categorical_C",
-            "input_type": "trick",
-            "info": {
-                "categories": {
-                    "0": {
-                        "position": [50, 100],
-                        "image": "dpad.png"
-                    },
-                    "1": {
-                        "position": [50, 100],
-                        "image": "dpad_1.png"
-                    },
-                    "2": {
-                        "position": [50, 100],
-                        "image": "dpad_2.png"
-                    },
-                    "3": {
-                        "position": [50, 100],
-                        "image": "dpad_3.png"
-                    },
-                    "4": {
-                        "position": [50, 100],
-                        "image": "dpad_4.png"
-                    }
-                }
-            }
-        }, 
-        {
             "name": "StaticImage_C",
             "info": {
-                "position": [155, 97],
+                "position": [74, 101],
                 "image": "analog_outer.png"
             }
         },
@@ -42,7 +14,7 @@
             "name": "Tuple_C",
             "input_type": "analog",
             "info": {
-                "position": [155, 97],
+                "position": [74, 101],
                 "image": "analog.png",
                 "pos_range": [25, 25]
             }
@@ -53,11 +25,11 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [270, 118],
+                        "position": [270,90],
                         "image": "button.png"
                     },
                     "1": {
-                        "position": [270, 118],
+                        "position": [270,90],
                         "image": "button_filled.png"
                     }
                 }
@@ -69,12 +41,12 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [240, 50],
-                        "image": "shoulder.png"
+                        "position": [220, 138],
+                        "image": "button.png"
                     },
                     "1": {
-                        "position": [240, 50],
-                        "image": "shoulder_filled.png"
+                        "position": [220, 138],
+                        "image": "button_filled.png"
                     }
                 }
             }
@@ -85,11 +57,27 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [60, 50],
+                        "position": [230, 40],
                         "image": "shoulder.png"
                     },
                     "1": {
-                        "position": [60, 50],
+                        "position": [230, 40],
+                        "image": "shoulder_filled.png"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Categorical_C",
+            "input_type": "r_btn",
+            "info": {
+                "categories": {
+                    "0": {
+                        "position": [70, 40],
+                        "image": "shoulder.png"
+                    },
+                    "1": {
+                        "position": [70, 40],
                         "image": "shoulder_filled.png"
                     }
                 }

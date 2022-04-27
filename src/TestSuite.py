@@ -26,21 +26,19 @@ class TestSuite:
         self.l_v = IntVar()
         l = Checkbutton(self.win, variable=self.l_v, text="L")
         l.grid(column=2, row=0, sticky=W)
+        self.r_v = IntVar()
+        l = Checkbutton(self.win, variable=self.r_v, text="R")
+        l.grid(column=3, row=0, sticky=W)
 
         self.hor_v = IntVar(self.win)
         self.hor_v.set(7)
         hor = OptionMenu(self.win, self.hor_v, *range(0, 15))
-        hor.grid(column=3, row=0, sticky=W)
+        hor.grid(column=4, row=0, sticky=W)
 
         self.vert_v = IntVar(self.win)
         self.vert_v.set(7)
         vert = OptionMenu(self.win, self.vert_v, *range(0, 15))
-        vert.grid(column=4, row=0, sticky=W)
-
-        self.tricks_v = IntVar(self.win)
-        self.tricks_v.set(0)
-        tricks = OptionMenu(self.win, self.tricks_v, *range(0, 5))
-        tricks.grid(column=5, row=0, sticky=W)
+        vert.grid(column=5, row=0, sticky=W)
 
         # canvas
         self.label = Label(self.win)
@@ -81,9 +79,9 @@ class TestSuite:
             self.win.update()
 
     def get_inputs(self):
-        return (str(self.a_v.get()), str(self.b_v.get()), str(self.l_v.get()), self.hor_v.get(), self.vert_v.get(), str(self.tricks_v.get()))
+        return (str(self.a_v.get()), str(self.b_v.get()), str(self.r_v.get()), str(self.l_v.get()), self.hor_v.get(), self.vert_v.get())
 
 
 if __name__ == "__main__":
-    t = TestSuite("test")
+    t = TestSuite("classic")
     t.start_loop()
