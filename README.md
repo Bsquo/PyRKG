@@ -1,6 +1,6 @@
 # PyRKG (Mario Kart 7 support)
 
-This is a fork of AtishaRibeiro's PyRKG that adds support for Mario Kart 7's DAT ghost files.
+This is a fork of AtishaRibeiro's PyRKG that adds support for [Mario Kart 7's DAT ghost files](https://wiki.tockdom.com/wiki/User:B_squo#DAT_.28File_Format.29_.28Mario_Kart_7.27s_Ghost_Format.29).
 
 Clone or download this repository to any folder you want, then follow the instructions below to install the dependencies and execute the script.
 
