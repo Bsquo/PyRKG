@@ -43,14 +43,18 @@ class Controller:
                 cur_input = str(inputs[0])
             elif input_type == "b_btn":
                 cur_input = str(inputs[1])
-            elif input_type == "l_btn":
+            elif input_type == "x_btn":
                 cur_input = str(inputs[2])
-            elif input_type == "r_btn":
+            elif input_type == "y_btn":
                 cur_input = str(inputs[3])
-            elif input_type == "1st_person_enabled":
+            elif input_type == "l_btn":
                 cur_input = str(inputs[4])
+            elif input_type == "r_btn":
+                cur_input = str(inputs[5])
+            elif input_type == "1st_person_enabled":
+                cur_input = str(inputs[6])
             elif input_type == "analog":
-                cur_input = (inputs[5], inputs[6])
+                cur_input = (inputs[7], inputs[8])
             elif input_type == None:
                 cur_input = None
 

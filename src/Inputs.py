@@ -130,13 +130,15 @@ class Inputs:
         for _ in range(nr_button_inputs):
             inputs = raw_data[cur_byte]
             frames = raw_data[cur_byte + 1]
-            accelerator = inputs & 0x1
-            brakes = (inputs & 0x2) >> 1
-            item = (inputs & 0x10) >> 4
-            drift = (inputs & 0x20) >> 5
+            a = inputs & 0x1
+            b = (inputs & 0x2) >> 1
+            x = (inputs & 0x4) >> 2
+            y = (inputs & 0x8) >> 3
+            l = (inputs & 0x10) >> 4
+            r = (inputs & 0x20) >> 5
             first_person = (inputs & 0x40) >> 6
 
-            button_inputs += [(accelerator, brakes, drift, item, first_person)] * frames
+            button_inputs += [(a, b, x, y, l, r, first_person)] * frames
             cur_byte += 2
 
         for _ in range(nr_analog_inputs):
@@ -148,7 +150,7 @@ class Inputs:
             analog_inputs += [(vertical, horizontal)] * frames
             cur_byte += 2
 
-        self.inputs = [(button_inputs[i][0], button_inputs[i][1], button_inputs[i][2], button_inputs[i][3], button_inputs[i][4], analog_inputs[i][0], analog_inputs[i][1]) 
+        self.inputs = [(button_inputs[i][0], button_inputs[i][1], button_inputs[i][2], button_inputs[i][3], button_inputs[i][4], button_inputs[i][5], button_inputs[i][6], analog_inputs[i][0], analog_inputs[i][1]) 
                         for i in range(len(button_inputs))]
 
     def _decode_bitfield(self, bitfield:int, return_length:int):

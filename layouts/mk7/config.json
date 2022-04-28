@@ -6,7 +6,7 @@
         {
             "name": "StaticImage_C",
             "info": {
-                "position": [74, 101],
+                "position": [74, 92],
                 "image": "analog_outer.png"
             }
         },
@@ -14,7 +14,7 @@
             "name": "Tuple_C",
             "input_type": "analog",
             "info": {
-                "position": [74, 101],
+                "position": [74, 92],
                 "image": "analog.png",
                 "pos_range": [25, 25]
             }
@@ -25,11 +25,11 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [270,90],
+                        "position": [302, 113],
                         "image": "button.png"
                     },
                     "1": {
-                        "position": [270,90],
+                        "position": [302, 113],
                         "image": "button_filled.png"
                     }
                 }
@@ -41,11 +41,43 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [220, 138],
+                        "position": [256, 154],
                         "image": "button.png"
                     },
                     "1": {
-                        "position": [220, 138],
+                        "position": [256, 154],
+                        "image": "button_filled.png"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Categorical_C",
+            "input_type": "x_btn",
+            "info": {
+                "categories": {
+                    "0": {
+                        "position": [256, 72],
+                        "image": "button.png"
+                    },
+                    "1": {
+                        "position": [256, 72],
+                        "image": "button_filled.png"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Categorical_C",
+            "input_type": "y_btn",
+            "info": {
+                "categories": {
+                    "0": {
+                        "position": [210, 113],
+                        "image": "button.png"
+                    },
+                    "1": {
+                        "position": [210, 113],
                         "image": "button_filled.png"
                     }
                 }
@@ -57,11 +89,11 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [230, 40],
+                        "position": [230, 20],
                         "image": "shoulder.png"
                     },
                     "1": {
-                        "position": [230, 40],
+                        "position": [230, 20],
                         "image": "shoulder_filled.png"
                     }
                 }
@@ -73,11 +105,11 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [70, 40],
+                        "position": [70, 20],
                         "image": "shoulder.png"
                     },
                     "1": {
-                        "position": [70, 40],
+                        "position": [70, 20],
                         "image": "shoulder_filled.png"
                     }
                 }
@@ -103,7 +135,7 @@
             "name": "Text_C",
             "input_type": "analog",
             "info": {
-                "position": [101, 207],
+                "position": [101, 199],
                 "font": "FOT-RodinNTLGPro-EB_1.otf",
                 "size": 15,
                 "stroke_width": 2,

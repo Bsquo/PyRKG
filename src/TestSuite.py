@@ -23,25 +23,31 @@ class TestSuite:
         self.b_v = IntVar()
         b = Checkbutton(self.win, variable=self.b_v, text="B")
         b.grid(column=1, row=0, sticky=W)
+        self.x_v = IntVar()
+        x = Checkbutton(self.win, variable=self.x_v, text="X")
+        x.grid(column=2, row=0, sticky=W)
+        self.y_v = IntVar()
+        y = Checkbutton(self.win, variable=self.y_v, text="Y")
+        y.grid(column=3, row=0, sticky=W)
         self.l_v = IntVar()
         l = Checkbutton(self.win, variable=self.l_v, text="L")
-        l.grid(column=2, row=0, sticky=W)
+        l.grid(column=4, row=0, sticky=W)
         self.r_v = IntVar()
         r = Checkbutton(self.win, variable=self.r_v, text="R")
-        r.grid(column=3, row=0, sticky=W)
+        r.grid(column=5, row=0, sticky=W)
         self.first_person_v = IntVar()
         first_person = Checkbutton(self.win, variable=self.first_person_v, text="1st Person Enabled")
-        first_person.grid(column=4, row=0, sticky=W)
+        first_person.grid(column=6, row=0, sticky=W)
 
         self.hor_v = IntVar(self.win)
         self.hor_v.set(7)
         hor = OptionMenu(self.win, self.hor_v, *range(0, 15))
-        hor.grid(column=5, row=0, sticky=W)
+        hor.grid(column=7, row=0, sticky=W)
 
         self.vert_v = IntVar(self.win)
         self.vert_v.set(7)
         vert = OptionMenu(self.win, self.vert_v, *range(0, 15))
-        vert.grid(column=6, row=0, sticky=W)
+        vert.grid(column=8, row=0, sticky=W)
 
         # canvas
         self.label = Label(self.win)
@@ -82,7 +88,7 @@ class TestSuite:
             self.win.update()
 
     def get_inputs(self):
-        return (str(self.a_v.get()), str(self.b_v.get()), str(self.r_v.get()), str(self.l_v.get()), str(self.first_person_v.get()), self.hor_v.get(), self.vert_v.get())
+        return (str(self.a_v.get()), str(self.b_v.get()), str(self.x_v.get()), str(self.y_v.get()), str(self.r_v.get()), str(self.l_v.get()), str(self.first_person_v.get()), self.hor_v.get(), self.vert_v.get())
 
 
 if __name__ == "__main__":

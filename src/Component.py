@@ -2,7 +2,7 @@ from math import floor
 
 class Component:
 
-    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "1st_person_enabled", "analog"]
+    supported_input_types = ["a_btn", "b_btn", "x_btn", "y_btn", "l_btn", "r_btn", "1st_person_enabled", "analog"]
 
     def __init__(self, canvas, input_type: str):
         self.canvas = canvas
@@ -20,7 +20,7 @@ class Component:
 
 class Categorical_C(Component):
 
-    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "1st_person_enabled", "analog"]
+    supported_input_types = ["a_btn", "b_btn", "x_btn", "y_btn", "l_btn", "r_btn", "1st_person_enabled", "analog"]
     info_format = {
         "categories": {
             str: { # string representing category
@@ -66,7 +66,7 @@ class Tuple_C(Component):
 
 class Text_C(Component):
 
-    supported_input_types = ["a_btn", "b_btn", "l_btn", "r_btn", "1st_person_enabled", "analog"]
+    supported_input_types = ["a_btn", "b_btn", "x_btn", "y_btn", "l_btn", "r_btn", "1st_person_enabled", "analog"]
     info_format = {
         "position": list, # [x, y]
         "font": str, # font file name
