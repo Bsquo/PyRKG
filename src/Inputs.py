@@ -138,7 +138,7 @@ class Inputs:
             r = (inputs & 0x20) >> 5
             first_person = (inputs & 0x40) >> 6
 
-            button_inputs += [(a, b, x, y, l, r, first_person)] * frames
+            button_inputs += [(a, b, x, y, r, l, first_person)] * frames
             cur_byte += 2
 
         for _ in range(nr_analog_inputs):
