@@ -1,6 +1,7 @@
 # PyRKG (Mario Kart 7 support)
+This is a command line input viewer for Mario Kart Wii and Mario Kart 7 ghost files. It allows the user to save a video of the inputs of any Time Trial ghost, which can then be overlayed with a recording of said ghost.
 
-This is a fork of AtishaRibeiro's PyRKG that adds support for [Mario Kart 7's DAT ghost files](https://wiki.tockdom.com/wiki/User:B_squo#DAT_.28File_Format.29_.28Mario_Kart_7.27s_Ghost_Format.29).
+This is a fork of AtishaRibeiro's PyRKG that adds support for [Mario Kart 7's DAT ghost files](https://wiki.tockdom.com/wiki/User:B_squo#DAT_.28File_Format.29_.28Mario_Kart_7.27s_Ghost_Format.29). Part of this fork uses code from [luckytyphlosion's fork](https://github.com/luckytyphlosion/PyRKG/commit/4840fd54ec30926cae26f7c9a790edabf65dad6c) as well.
 
 Clone or download this repository to any folder you want, then follow the instructions below to install the dependencies and execute the script.
 
