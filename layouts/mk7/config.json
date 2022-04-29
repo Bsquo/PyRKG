@@ -25,11 +25,11 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [302, 113],
+                        "position": [297, 116],
                         "image": "button.png"
                     },
                     "1": {
-                        "position": [302, 113],
+                        "position": [297, 116],
                         "image": "button_filled.png"
                     }
                 }
@@ -41,11 +41,11 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [256, 154],
+                        "position": [256, 155],
                         "image": "button.png"
                     },
                     "1": {
-                        "position": [256, 154],
+                        "position": [256, 155],
                         "image": "button_filled.png"
                     }
                 }
@@ -57,11 +57,11 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [256, 72],
+                        "position": [256, 77],
                         "image": "button.png"
                     },
                     "1": {
-                        "position": [256, 72],
+                        "position": [256, 77],
                         "image": "button_filled.png"
                     }
                 }
@@ -73,11 +73,11 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [210, 113],
+                        "position": [215, 116],
                         "image": "button.png"
                     },
                     "1": {
-                        "position": [210, 113],
+                        "position": [215, 116],
                         "image": "button_filled.png"
                     }
                 }
@@ -89,11 +89,11 @@
             "info": {
                 "categories": {
                     "0": {
-                        "position": [230, 20],
+                        "position": [226, 20],
                         "image": "shoulder.png"
                     },
                     "1": {
-                        "position": [230, 20],
+                        "position": [226, 20],
                         "image": "shoulder_filled.png"
                     }
                 }
