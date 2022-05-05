@@ -90,11 +90,15 @@ class Text_C(Component):
 
     # Reduced the function to only display text for the joystick (the raw horizontal and vertical values)
     def process_input_and_draw(self, current_input, show_joystick_values, show_first_person_enabled_text, joystick_range_7_7):
+        # Doing this so that the values shown correspond to (horizontal, vertical),
+        # which is how it's stored in the input data, rather than the other way around.
+        current_input = (current_input[1], current_input[0])	
+        
         if self.input_type == "analog":
             # Render the joystick raw values ranging from (-7,7)
             if joystick_range_7_7:
                 # Taken from the original PyRKG README
-                new_input = (current_input[0] - 7, current_input[1] - 7)	
+                new_input = (current_input[0] - 7, current_input[1] - 7)
                 text = f"{str(new_input )}"
             # Render the joystick raw values ranging from (0,14)
             else:
